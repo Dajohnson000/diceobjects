@@ -31,7 +31,7 @@ class Die {
     }
 
     display() {
-        rectMode(CENTER);
+        //rectMode(CENTER);
         textAlign(CENTER, CENTER);
         fill("white");
         strokeWeight(3);
