@@ -16,16 +16,17 @@ function setup() {
 function draw() {
   background("Pink");
   text('Pig', windowWidth/2, 100)
+  text('Game description: Try to get to 100 points from rolling the dice in the least amount of rolls.', windowWidth/2, 200);
   // loop over the array and place+display each die
   for (let i = 0; i < dice.length; i++) {
     const die = dice[i]; // 'die' is a temporary variable for the current array item
     die.place(die.size*1.2*i+die.size, die.size*2); // place the die neatly in the row
     die.display(); // actually draw it on screen
   }
-  text('Total', 200, 150);
-  text(sum, 200, 200); 
-  text('Rolls', 300, 150);
-  text( rolls, 300, 200);
+  text('Total', 200, 300);
+  text(sum, 200, 350); 
+  text('Rolls', 300, 300);
+  text( rolls, 300, 350);
 }
 
 function mouseClicked() {
@@ -58,13 +59,13 @@ function shakeDice() {
     die.roll();
       list = list + die.value + " ";
       //for (x =0; x < count.length; x++);
-      sum += die.value; }
+      sum += die.value; 
       //for (let x =0; x < count.length; x++)
-  console.log(list);
+      if(sum > 100) return;
+    
   rolls++;
-  if (rolls >= 100){
-      rolls = 0;
-  }
+    }
+  
 console.log(rolls);
 console.log(sum);
 
